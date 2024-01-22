@@ -38,7 +38,7 @@ const Page = () => (
                     ))}
                 </div>
                 <div className='text-center font-medium'>
-                    <p>Don't have an account? <span className='text-primary underline cursor-pointer'>Sign Up.</span></p>
+                    <p>Dont have an account? <span className='text-primary underline cursor-pointer'>Sign Up.</span></p>
                     <p className='text-primary cursor-pointer'>Forgot Password</p>
                 </div>
             </div>
