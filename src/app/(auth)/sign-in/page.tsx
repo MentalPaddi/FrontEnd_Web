@@ -6,7 +6,7 @@ import arrowRight from '@/public/assets/arrowRight.svg'
 import { socailIcons } from '@/constants';
 
 const Page = () => (
-    <div className='bg-blue w-full mb-20 max-w-[33em] mx-auto bg-white rounded-3xl'>
+    <div className='bg-blue w-full md:mb-20 max-w-[33em] mx-auto bg-white text-[.9em] md:text-[1em] rounded-t-3xl md:rounded-b-3xl'>
         <form className='p-10'>
             <p className="text-3xl font-bold text-brown-80 p-10 text-center">Sign In</p>
             <div className='my-5'>
