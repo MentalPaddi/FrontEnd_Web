@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import man from '@/public/assets/Mental_Health.svg'
-import menu from '@/public/assets/menu.svg'
+import Link from 'next/link';
+import man from '@/public/assets/Mental_Health.svg';
+import menu from '@/public/assets/menu.svg';
 
 const Page = () => {
   return (
@@ -16,7 +17,7 @@ const Page = () => {
               <li>Home</li>
               <li>About Us</li>
               <li>Services</li>
-              <li className='bg-slate-900/50 w-[6em] h-[2.5em] flex items-center cursor-pointer justify-center text-white font-medium rounded-lg'>Sign In</li>
+              <li className='bg-slate-900/50 w-[6em] h-[2.5em] flex items-center cursor-pointer justify-center text-white font-medium rounded-lg'><Link href='/sign-up'>Sign Up </Link> </li>
             </ul>
           </div>
         </div>
