@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss'             
 
 const config: Config = {
   content: [
@@ -14,7 +14,7 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       boxShadow: {
-        "box-shadow": "0px 8px 16px 0px rgba(75, 52, 37, 0.05);",
+        "box-shadow": "0px 8px 16px 0px rgba(75, 52, 37, 0.05)",
       },
       colors: {
         'primary': '#0F8BD0',
