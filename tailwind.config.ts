@@ -19,6 +19,7 @@ const config: Config = {
       colors: {
         'primary': '#0F8BD0',
         'brown-80': '#4F3422',
+        'dark-blue': '#045481',
         'black': '#0B0A0A' 
       }
     },
