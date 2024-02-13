@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import man from '@/public/assets/Mental_Health.svg';
+import man from '@/public/assets/Mental_health.svg';
 import menu from '@/public/assets/menu.svg';
 
 const Page = () => {
