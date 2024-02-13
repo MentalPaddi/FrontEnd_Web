@@ -79,4 +79,68 @@ export const medications = [
         icon: cancel,
         text: 'Prefer not to say'
     },
+];
+
+
+export const moodScore = [
+    {
+        mode: 'good',
+        height: '60'
+    },
+    {
+        mode: 'good',
+        height: '40'
+    },
+    {
+        mode: 'good',
+        height: '20'
+    },
+    {
+        mode: 'good',
+        height: '90'
+    },
+    {
+        mode: 'bad',
+        height: '50'
+    },
+    {
+        mode: 'good',
+        height: '60'
+    },
+    {
+        mode: 'good',
+        height: '60'
+    },
+    {
+        mode: 'bad',
+        height: '80'
+    },
+    {
+        mode: 'good',
+        height: '20'
+    },
+    {
+        mode: 'good',
+        height: '40'
+    },
+    {
+        mode: 'bad',
+        height: '10'
+    },
+    {
+        mode: 'good',
+        height: '100'
+    },
+    {
+        mode: 'good',
+        height: '60'
+    },
+    {
+        mode: 'bad',
+        height: '50'
+    },
+    {
+        mode: 'good',
+        height: '60'
+    },
 ]
