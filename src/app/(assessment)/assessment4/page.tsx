@@ -9,7 +9,7 @@ const Page = () => {
     <section className="p-5">
         <AssessmentNav pageNumber="4" />
         <form className=" max-w-[35em] mx-auto text-center">
-            <h1 className="font-bold text-3xl text-[#0F8BD0] text-center m-10">What's your weight?</h1>
+            <h1 className="font-bold text-3xl text-[#0F8BD0] text-center m-10">Whats your weight?</h1>
             <div className="flex flex-col items-center">
                 <div className="w-60 mx-auto h-10 flex items-center justify-between font-semibold my-5 rounded-full bg-white">
                     <p className="w-1/2 bg-dark-blue text-white h-full p-2 rounded-full">kg</p>
