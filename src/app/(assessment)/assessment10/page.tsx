@@ -14,7 +14,7 @@ const Page = () => {
             <div className="flex items-center flex-col my-20">
                 <Image src={health} alt="health" />
                 <div className="flex items-center flex-col">
-                    <textarea name="" id="" cols="30" rows="10" className="p-5  rounded-xl my-10"></textarea>
+                    <textarea name="" id="" cols={30} rows={10} className="p-5  rounded-xl my-10"></textarea>
                     <p className="text-center font-semibold">Most Common: <span className="text-primary">Drug Abuse, Angry, Depressed</span></p>
                 </div>
             </div>

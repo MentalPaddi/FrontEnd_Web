@@ -11,7 +11,7 @@ const Page = () => {
             <p className="text-[#736B66] w-[80%] text-center mx-auto">Freely write down anything thats on your mind. Mentalpaddi is here to listen...</p>
             <div className="flex items-center flex-col my-10">
                 <div className="flex items-center flex-col">
-                    <textarea name="" id="" cols="40" rows="10" className="p-5  rounded-xl my-10"></textarea>
+                    <textarea name="" id="" cols={40} rows={10} className="p-5  rounded-xl my-10"></textarea>
                 </div>
             </div>
             <Button title="Continue" icon={rightArrow} />
