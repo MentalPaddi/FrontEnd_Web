@@ -4,7 +4,14 @@ import rightArrow from '@/public/assets/arrowRight.svg'
 import Image from "next/image";
 import meter from '@/public/assets/moodScale.svg';
 import emotion from '@/public/assets/Emotion.svg'
-import arrowDown from '@/public/assets/doubleDown.svg'
+import arrowDown from '@/public/assets/doubleDown.svg';
+import { useForm, SubmitHandler } from "react-hook-form"
+
+type Inputs = {
+  example: string
+  exampleRequired: string
+}
+
 
 const Page = () => {
   return (
