@@ -68,14 +68,14 @@ const Page = () => {
                     <label className='font-semibold text-black my-5'>Password</label>
                     <div className='w-full h-[3.5em] mx-auto flex rounded-full shadow-box-shadow border-[1px]'>
                         <Image src={lock} alt='lock' width={25} height={25} className='m-3'/>
-                        <input type="password" {...register("password", { required: true })} className='outline-none' placeholder="Enter your password" />
+                        <input type="password" {...register("password", { required: true })} className='outline-none w-[80%]' placeholder="Enter your password" />
                     </div>
                 </div>
                 <div className='my-5'>
                     <label className='font-semibold text-black my-5'>Password Confirmation</label>
                     <div className='w-full h-[3.5em] mx-auto flex rounded-full shadow-box-shadow border-[1px]'>
                         <Image src={lock} alt='lock' width={25} height={25} className='m-3'/>
-                        <input type="password" {...register("password2", { required: true })} className='outline-none' placeholder="Confirm your password" />
+                        <input type="password" {...register("password2", { required: true })} className='outline-none w-[80%]' placeholder="Confirm your password" />
                     </div>
                 </div>
                 <div className='my-10'>

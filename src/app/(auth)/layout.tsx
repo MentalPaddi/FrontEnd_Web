@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-      <div className='bg-primary'>
+      <div className='bg-primary min-h-full border-primary border-2'>
         <div className='p-20 text-center'>
           <p className='text-4xl font-bold text-center text-white'>Mentalpaddi</p>
           <p className='text-white font-light text-xs pt-1'>We are here for your Mind</p>
