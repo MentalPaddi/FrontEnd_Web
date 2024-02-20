@@ -17,7 +17,7 @@ const Page = () => {
               <li>Home</li>
               <li>About Us</li>
               <li>Services</li>
-              <li className='bg-slate-900/50 w-[6em] h-[2.5em] flex items-center cursor-pointer justify-center text-white font-medium rounded-lg'><Link href='/sign-up'>Sign Up </Link> </li>
+              <li className='bg-slate-900/50 w-[6em] h-[2.5em] flex items-center cursor-pointer justify-center text-white font-medium rounded-lg'><Link href='/sign-up'>Sign In</Link> </li>
             </ul>
           </div>
         </div>
@@ -33,7 +33,7 @@ const Page = () => {
                     consectetur adipiscing elit.Rorem ipsum
                     dolor sit amet, consectetur adipiscing elit.
                 </p>
-                <button className='bg-slate-900/50 w-40 my-10 text-white font-semibold rounded-lg h-[3em]'>Talk to Paddi Ai</button>
+                <Link href='/sign-up'><button className='bg-slate-900/50 w-[7em] my-10 text-white font-semibold rounded-lg h-[3em]'>Sign Up</button></Link>
             </div>
     </div>
     </section>

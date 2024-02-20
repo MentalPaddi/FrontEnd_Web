@@ -17,9 +17,9 @@ import pillRound from '@/public/assets/pillRound.svg';
 import heart from '@/public/assets/Solidheart.svg';
 import vector from '@/public/assets/Vector.svg';
 import flag from '@/public/assets/Solidflag.svg';
-import happy from '@/public/assets/moodHappy.svg';
+import happy from '@/public/assets/happy.svg';
 import mobile from '@/public/assets/SolidMobile.svg';
-
+import happy2 from '@/public/moodIcons/happy2.svg'
 export const healths = [
     {
         icon: heart,
@@ -34,7 +34,7 @@ export const healths = [
         text: 'I want to cope with trauma'
     },
     {
-        icon: happy,
+        icon: happy2,
         text: 'I want to be a better person'
     },
     {
