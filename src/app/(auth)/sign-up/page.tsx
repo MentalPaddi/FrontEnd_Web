@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { IoMdPerson } from "react-icons/io";
 import { useSignUpUserMutation } from '@/api/authApi';
 import toast from 'react-hot-toast';
+import Link from 'next/link';
 
 const Page = () => {
     const router = useRouter();
@@ -81,7 +82,7 @@ const Page = () => {
                 <div className='my-10'>
                     <button className='w-full h-[3.5em] bg-primary rounded-full text-white font-bold flex items-center justify-center gap-3'>Assessment <Image src={arrowRight} alt='arrow-right' width={30} height={30}/></button>
                     <div className='text-center m-5 font-medium'>
-                        <p>Already have an account? <span className='text-primary underline cursor-pointer'>Sign In.</span></p>
+                        <p>Already have an account? <Link href='/sign-in'><span className='text-primary underline cursor-pointer'>Sign In.</span></Link></p>
                     </div>
                 </div>
             </form>
