@@ -4,6 +4,7 @@ import lock from '@/public/assets/lock.svg';
 import email from '@/public/assets/email.svg';
 import arrowRight from '@/public/assets/arrowRight.svg'
 import { socailIcons } from '@/constants';
+import Link from 'next/link';
 
 const Page = () => (
     <div className='bg-blue w-full md:mb-20 max-w-[33em] mx-auto bg-white text-[.9em] md:text-[1em] rounded-t-3xl md:rounded-b-3xl'>
@@ -38,7 +39,7 @@ const Page = () => (
                     ))}
                 </div>
                 <div className='text-center font-medium'>
-                    <p>Dont have an account? <span className='text-primary underline cursor-pointer'>Sign Up.</span></p>
+                    <p>Dont have an account? <Link href='/sign-up'><span className='text-primary underline cursor-pointer'>Sign Up.</span></Link></p>
                     <p className='text-primary cursor-pointer'>Forgot Password</p>
                 </div>
             </div>
