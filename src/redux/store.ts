@@ -5,6 +5,7 @@ import { persistReducer } from 'redux-persist';
 import { authApi } from '@/api/authApi';
 import authReducer from './features/authSlice';
 import assessmentsReducer from './features/assessmentSlice';
+import loaderReducer from './features/loaderSlice';
 
 const persistConfig = {
   key: 'root',
@@ -14,6 +15,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   auth: authReducer,
+  loader: loaderReducer,
   assessments: assessmentsReducer,
   [authApi.reducerPath]: authApi.reducer,
 });

@@ -1,6 +1,6 @@
 // api.ts
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-const baseUrl = process.env.BASE_URL;
+const baseUrl = 'https://donbot.pythonanywhere.com';
 
 interface LoginRequest {
   email: string;
@@ -19,16 +19,16 @@ export const authApi = createApi({
   reducerPath: 'authApi',
   baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
-    loginUser: builder.mutation<any, LoginRequest>({
+    signInUser: builder.mutation<any, LoginRequest>({
       query: (body) => ({
-        url: '/admin/admin_signin',
+        url: '/accounts/auth/login/',
         method: 'POST',
         body
       }),
     }),
     signUpUser: builder.mutation<any, SignupRequest>({ 
       query: (body) => ({
-        url: 'accounts/auth/signup/',
+        url: '/accounts/auth/signup/',
         method: 'POST',
         body,
         headers: {
@@ -40,6 +40,6 @@ export const authApi = createApi({
 });
 
 export const { 
-  useLoginUserMutation, 
+  useSignInUserMutation, 
   useSignUpUserMutation,
 } = authApi;

@@ -14,9 +14,6 @@ const Page = () => {
               <Image src={menu} alt='menu' className='md:hidden' width={20} height={20} />
             </div>
             <ul className='md:flex gap-[10%] flex-row items-center justify-end hidden'>
-              <li>Home</li>
-              <li>About Us</li>
-              <li>Services</li>
               <li className='bg-slate-900/50 w-[6em] h-[2.5em] flex items-center cursor-pointer justify-center text-white font-medium rounded-lg'><Link href='/sign-up'>Sign In</Link> </li>
             </ul>
           </div>
@@ -28,12 +25,12 @@ const Page = () => {
             </div>
             <div className='w-full md:w-1/2 flex justify-center text-left flex-col'>
                 <h1 className='font-bold text-5xl my-10'>Mental Health</h1>
-                <p className='w-[90%]'>Rorem ipsum dolor sit amet, consectetur ad
-                    ipiscing elit.Rorem ipsum dolor sit amet,
-                    consectetur adipiscing elit.Rorem ipsum
-                    dolor sit amet, consectetur adipiscing elit.
+                <p className='w-[90%] font-semibold text-3xl'>
+                    Tired?<br />
+                    Frustrated?<br />
+                    Depressed?<br />
                 </p>
-                <Link href='/sign-up'><button className='bg-slate-900/50 w-[7em] my-10 text-white font-semibold rounded-lg h-[3em]'>Sign Up</button></Link>
+                <Link href='/sign-up'><button className='bg-slate-900/50 p-3 my-10 text-white font-semibold rounded-lg h-[3em]'>Speak to your paddi</button></Link>
             </div>
     </div>
     </section>

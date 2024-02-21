@@ -12,10 +12,15 @@ import sleep from '@/public/moodIcons/sleep.svg';
 import journal from '@/public/assets/journal-emoji.svg';
 import stress from '@/public/moodIcons/stress.svg';
 import sad from '@/public/moodIcons/sad.svg'
+import { selectAuth } from '@/redux/features/authSlice';
+import { redirect } from 'next/navigation';
 
 const Page = () => {
-  const { assessments } = useAppSelector(selectAssessments)
-  console.log(assessments)
+  const { signedUpUser } = useAppSelector(selectAuth);
+
+  const { data } = signedUpUser;
+
+  if(!data) return redirect('sign-in');
 
   return (
     <main>
@@ -24,7 +29,7 @@ const Page = () => {
           <div className="flex items-center my-2">
             <div className="rounded-full bg-[#F7F4F2] mr-3 h-20 w-20"></div>
             <div>
-              <h2 className="text-white font-bold text-xl">Hi, Neil</h2>
+              <h2 className="text-white font-bold text-xl">Hi, {data.first_name}</h2>
               <p className='text-[#94F815]'>Happy</p>
             </div>
           </div>
