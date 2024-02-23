@@ -30,7 +30,7 @@ const Page = () => {
                   <p className="text-[#785858] font-semibold text-sm">Do 20m Breathing.</p>
                 </div>
               </div>
-              <CircularProgressBar percentage={40} />
+              {/* <CircularProgressBar percentage={40} /> */}
             </div>
             <div className="w-full flex items-center gap-3 justify-between p-3 bg-[#ADD8E6] h-[5em] rounded-2xl">
               <div className='flex items-center gap-3'>
@@ -43,7 +43,7 @@ const Page = () => {
                   <p className="text-[#785858] font-semibold text-sm">Do 20m Breathing.</p>
                 </div>
               </div>
-              <CircularProgressBar percentage={40} />
+              {/* <CircularProgressBar percentage={40} /> */}
             </div>
             <div className="w-full flex items-center gap-3 justify-between p-3 bg-[#ADD8E6] h-[5em] rounded-2xl">
               <div className='flex items-center gap-3'>
@@ -56,7 +56,7 @@ const Page = () => {
                   <p className="text-[#785858] font-semibold text-sm">Do 20m Breathing.</p>
                 </div>
               </div>
-              <CircularProgressBar percentage={40} />
+              {/* <CircularProgressBar percentage={40} /> */}
             </div>
           </div>
         </div>
