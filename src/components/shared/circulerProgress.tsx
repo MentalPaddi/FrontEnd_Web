@@ -1,6 +1,4 @@
-const CircularProgressBar = ({ percentage }: { percentage: number}) => {
-  const radius = 40;
-  const strokeWidth = 6;
+const CircularProgressBar = ({ percentage = 40 , radius = 40, color = "#ED7E1C", strokeWidth = 6 }: { percentage: number, radius: number; color:string; strokeWidth:number }) => {
   const normalizedRadius = radius - strokeWidth * 2;
   const circumference = normalizedRadius * 2 * Math.PI;
   const strokeDashoffset = circumference - (percentage / 100) * circumference;
@@ -18,7 +16,7 @@ const CircularProgressBar = ({ percentage }: { percentage: number}) => {
       />
       <circle
         className="circle-progress rounded-lg"
-        stroke="#ED7E1C"
+        stroke={color}
         fill="transparent"
         strokeWidth={strokeWidth}
         strokeDasharray={circumference + ' ' + circumference}
@@ -30,7 +28,7 @@ const CircularProgressBar = ({ percentage }: { percentage: number}) => {
       <text
         x={radius}
         y={radius}
-        className=" justify-center text-sm font-semibold"
+        className="text-xl font-semibold"
         textAnchor="middle"
         dominantBaseline="middle"
       >

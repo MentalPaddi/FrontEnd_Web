@@ -4,6 +4,7 @@ import { IoCalendarOutline } from "react-icons/io5";
 import { IoPerson } from "react-icons/io5";
 import therapy from '@/public/moodIcons/Therapy_AI.svg';
 import Image from "next/image";
+import Link from "next/link";
 
 const BottomNav = () => {
   return (
@@ -21,10 +22,12 @@ const BottomNav = () => {
                 <Image src={therapy} alt="therapy" className="absolute bottom-10"  width={60} height={60} />
                 <span className="relative top-4">Therapy AI</span>
             </div>
-            <div className="flex items-center flex-col">
-                <IoCalendarOutline className="w-7 h-7" />
-                <span>Calender</span>
-            </div>
+            <Link href='/calender'>
+                <div className="flex items-center flex-col">
+                        <IoCalendarOutline className="w-7 h-7" />
+                        <span>Calender</span>
+                </div>
+            </Link>
             <div className="flex items-center flex-col">
                 <IoPerson className="w-7 h-7"/>
                 <span>Profile</span>
