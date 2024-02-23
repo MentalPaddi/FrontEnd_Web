@@ -72,7 +72,7 @@ const Page = () => {
             dispatch(setSignUpUser(data))
         }
 
-        router.push('/home'); 
+        router.push('/your-health'); 
     }
 
     return(

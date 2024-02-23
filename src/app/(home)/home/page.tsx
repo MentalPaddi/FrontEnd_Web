@@ -23,6 +23,7 @@ import libraryIcon from '@/public/assets/library-icon.svg';
 import quoteIcon from '@/public/assets/quote-icon.svg';
 import modivationIcon from '@/public/assets/meditation-Icon.svg';
 import CircularProgressBar from '@/components/shared/circulerProgress';
+import Link from 'next/link';
 
 const Page = () => {
   const { signedUpUser } = useAppSelector(selectAuth);
@@ -44,14 +45,14 @@ const Page = () => {
           <div className='text-white'>
             <p className='text-3xl'>Good Day</p>
             <p className='font-bold text-2xl'>{data.first_name}!</p>
-            <p className='mt-5'>How are you feeling today?</p>
+            {/* <p className='mt-5'>How are you feeling today?</p> */}
           </div>
-          <div className='flex items-center gap-3 my-4 overflow-x-auto'>
+          {/* <div className='flex items-center gap-3 my-4 overflow-x-auto'>
             <div className='h-20 w-20 bg-white rounded-lg'></div>
             <div className='h-20 w-20 bg-white rounded-lg'></div>
             <div className='h-20 w-20 bg-white rounded-lg'></div>
             <div className='h-20 w-20 bg-white rounded-lg'></div>
-          </div>
+          </div> */}
         </div>
       </section>
       
@@ -169,10 +170,12 @@ const Page = () => {
 
       <section className='p-10 pt-0 w-full md:w-[70%] mx-auto'>
         <div className='flex items-center justify-around'>
-          <div className='flex gap-2 cursor-pointer items-center shadow-md p-3 rounded-xl bg-[#F4F3F1]'>
-            <Image src={journalIcon} width={30} height={30} alt='journal'/>
-            <p className='font-bold text-brown-80'>Journal</p>
-          </div>
+          <Link href='/journal'>
+            <div className='flex gap-2 cursor-pointer items-center shadow-md p-3 rounded-xl bg-[#F4F3F1]'>
+              <Image src={journalIcon} width={30} height={30} alt='journal'/>
+              <p className='font-bold text-brown-80'>Journal</p>
+            </div>
+          </Link>
           <div className='flex gap-2 cursor-pointer items-center shadow-md p-3 rounded-xl bg-[#F4F3F1]'>
             <Image src={libraryIcon} width={30} height={30} alt='journal'/>
             <p className='font-bold text-brown-80'>Library</p>
