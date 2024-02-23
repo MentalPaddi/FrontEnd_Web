@@ -15,7 +15,7 @@ const Page = () => {
             <p className='font-semibold w-[15em] text-center'>You have no AI conversation. Get your mind healthy by starting one</p>
         </div>
 
-        <div className='w-full flexc justify-center'>
+        <div className='w-full flex justify-center'>
           <button className='p-5 bg-primary mb-10 rounded-full w-[20em] text-white font-bold mt-20 mx-auto'>New conversation </button>
         </div>
     </section>
