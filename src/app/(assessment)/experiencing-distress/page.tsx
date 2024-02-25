@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 
 const Page = () => {
   const [ distress, setDistress ] = useState(false)
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { assessments } = useAppSelector(selectAssessments);
@@ -20,7 +21,7 @@ const Page = () => {
   ];
 
   const handleSubmit = () => {
-
+    setLoading(!loading)
     dispatch(setAssessments({...assessments, is_physical_distress: distress }))
     router.push('/sleep-quality');
   }
@@ -41,7 +42,7 @@ const Page = () => {
              </div>
             </div>
             <div onClick={()=> handleSubmit()}>
-              <Button title="Continue" icon={rightArrow} />
+              <Button title="Continue" icon={rightArrow} loading={loading}/>
             </div>
         </div>
     </section>

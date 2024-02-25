@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 interface Inputs {
   symptoms: string;
@@ -18,6 +19,7 @@ interface Inputs {
 const Page = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
+  const [loading, setLoading] = useState(false);
   const { assessments } = useAppSelector(selectAssessments)
 
   const {
@@ -27,6 +29,7 @@ const Page = () => {
   } = useForm<Inputs>();
 
   const onSubmit = ({ symptoms }: { symptoms: string }) => {
+    setLoading(!loading)
     dispatch(setAssessments({...assessments, other_mental_symptom: symptoms }))
     router.push('/stress-level')
   };
@@ -48,7 +51,7 @@ const Page = () => {
                   <p className="text-center font-semibold">Most Common: <span className="text-primary">Drug Abuse, Angry, Depressed</span></p>
                 </div>
             </div>
-            <Button title="Continue" icon={rightArrow} />
+            <Button title="Continue" icon={rightArrow} loading={loading}/>
         </form>
     </section>
   )

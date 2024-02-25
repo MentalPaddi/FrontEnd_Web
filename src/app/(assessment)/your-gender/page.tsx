@@ -14,6 +14,7 @@ import toast from "react-hot-toast";
 
 const Page = () => {
   const [gender, setGender] = useState('');
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { assessments } = useAppSelector(selectAssessments)
@@ -22,7 +23,7 @@ const Page = () => {
     e.preventDefault();
     
     if(!gender) return toast.error('Please select a gender');
-
+    setLoading(!loading)
     dispatch(setAssessments({...assessments, gender}));
     router.push('/your-age')
   }
@@ -44,7 +45,7 @@ const Page = () => {
                 <span>Prefer to skip, thanks</span>
                 <Image src={cancel} alt="cancel"   />
             </p>
-            <Button title="Continue" icon={rightArrow} />
+            <Button title="Continue" icon={rightArrow} loading={loading}/>
         </form>
     </section>
   )

@@ -10,12 +10,14 @@ import { useRouter } from "next/navigation";
 
 const Page = () => {
   const [ level, setLevel ] = useState(0)
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { assessments } = useAppSelector(selectAssessments);
   const numbers = Array.from({ length: 5}, (_, index) => index++);
 
   const handleSubmit = () => {
+    setLoading(!loading)
     dispatch(setAssessments({...assessments, stress_level: level }))
     router.push('/home');
   }
@@ -35,7 +37,7 @@ const Page = () => {
               </div>
             </div>
             <div onClick={()=> handleSubmit()}>
-              <Button title="Continue" icon={rightArrow} />
+            <Button title="Continue" icon={rightArrow} loading={loading}/>
             </div>
         </div>
     </section>

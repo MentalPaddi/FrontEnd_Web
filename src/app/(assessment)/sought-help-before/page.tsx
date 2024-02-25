@@ -13,11 +13,13 @@ import { selectAssessments, setAssessments } from "@/redux/features/assessmentSl
 
 const Page = () => {
   const [ profHelp, setProfHelp ] = useState(false)
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { assessments } = useAppSelector(selectAssessments)
 
   const handleSubmit = () => {
+    setLoading(!loading)
     dispatch(setAssessments({...assessments, is_professional_help: profHelp}));
     router.push('/experiencing-distress');
   }
@@ -35,7 +37,7 @@ const Page = () => {
               </div>
             </div>
             <div onClick={()=> handleSubmit()}>
-              <Button title="Continue" icon={rightArrow} />
+            <Button title="Continue" icon={rightArrow} loading={loading}/>
             </div>
         </div>
     </section>

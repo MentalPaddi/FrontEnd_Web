@@ -7,6 +7,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { selectAssessments, setAssessments } from "@/redux/features/assessmentSlice";
+import { useState } from "react";
 
 type Inputs = {
   age: string
@@ -15,6 +16,7 @@ type Inputs = {
 const Page = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
+  const [loading, setLoading] = useState(false);
   const { assessments } = useAppSelector(selectAssessments)
 
   const {
@@ -24,6 +26,7 @@ const Page = () => {
     } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = ({age}) => {
+      setLoading(!loading)
       dispatch(setAssessments({...assessments, age}))
       router.push('/your-weight')
   }
@@ -38,7 +41,7 @@ const Page = () => {
               {errors.age?.type === 'maxLength' && <span className="text-center font-semibold text-red-500"> Age must be less than 4 number</span>}
               {errors.age?.type === 'required' && <span className="text-center font-semibold text-red-500">Please input your age</span>}
             </div>
-            <Button title="Continue" icon={rightArrow} />
+            <Button title="Continue" icon={rightArrow} loading={loading}/>
         </form>
     </section>
   )

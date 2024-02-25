@@ -11,7 +11,6 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { selectAssessments, setAssessments } from "@/redux/features/assessmentSlice";
-import toast from "react-hot-toast";
 
 type Inputs = {
   health: string
@@ -20,6 +19,7 @@ type Inputs = {
 
 const Page = () => {
     const [healthGoal, setHealthGoal] = useState('');
+    const [loading, setLoading] = useState(false);
     const router = useRouter();
     const dispatch = useAppDispatch();
     const { assessments } = useAppSelector(selectAssessments)
@@ -31,6 +31,7 @@ const Page = () => {
       } = useForm<Inputs>()
 
     const onSubmit: SubmitHandler<Inputs> = (data) => {
+        setLoading(!loading)
         dispatch(setAssessments({...assessments, health_goal: healthGoal }))
         router.push('/your-gender');
     }
@@ -52,7 +53,7 @@ const Page = () => {
                 ))}
                 {errors.health && <span className="text-center font-semibold text-red-500">Please select a field</span>}
             </div>
-            <Button title="Continue" icon={rightArrow} />
+            <Button title="Continue" icon={rightArrow} loading={loading}/>
         </form>
     </section>
   )

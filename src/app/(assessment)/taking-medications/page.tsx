@@ -13,13 +13,14 @@ import toast from "react-hot-toast";
 
 const Page = () => {
   const [ medication, setMedication ] = useState('')
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { assessments } = useAppSelector(selectAssessments);
 
   const handleSubmit = () => {
     if(!medication) return toast.error('Youve not selected any medications');
-
+    setLoading(!loading)
     dispatch(setAssessments({...assessments, medications: medication }))
     router.push('/other-symptoms');
   }
@@ -38,7 +39,7 @@ const Page = () => {
                 ))}
             </div>
             <div onClick={()=> handleSubmit()}>
-                <Button title="Continue" icon={rightArrow} />
+              <Button title="Continue" icon={rightArrow} loading={loading}/>
             </div>
         </div>
     </section>

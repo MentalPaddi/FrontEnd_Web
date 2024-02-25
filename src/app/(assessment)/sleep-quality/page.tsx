@@ -15,13 +15,14 @@ import toast from "react-hot-toast";
 
 const Page = () => {
   const [ sleepQuality, setSleepQuality ] = useState('')
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { assessments } = useAppSelector(selectAssessments);
 
   const handleSubmit = () => {
     if(!sleepQuality) return toast.error('Youve not told use your sleep quality');
-
+    setLoading(!loading)
     dispatch(setAssessments({...assessments, sleep_quality: sleepQuality}));
     router.push('/taking-medications');
   }
@@ -48,7 +49,7 @@ const Page = () => {
                 ))}
             </div>
             <div onClick={()=> handleSubmit()}>
-                <Button title="Continue" icon={rightArrow} />
+                <Button title="Continue" icon={rightArrow} loading={loading}/>
             </div>
         </div>
     </section>
