@@ -21,7 +21,7 @@ const Page = () => {
 
         <form className='md:p-10 mt-10 md:mt-0'>
             <div>
-                <p className='font-semibold my-5 text-xl'>Let's write about it</p>
+                <p className='font-semibold my-5 text-xl'>Lets write about it</p>
                 <textarea placeholder='Type in here...' className='bg-[#906146] placeholder-white w-full rounded-3xl text-white p-5' cols={30} rows={10}>
                 </textarea>
             </div>
