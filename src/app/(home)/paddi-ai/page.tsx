@@ -3,7 +3,7 @@ import ai from '@/public/assets/paddiAi.svg';
 
 const Page = () => {
   return (
-    <section className='bg-white p-10 md:p-20 min-h-screen'>
+    <section className='bg-white p-10 md:p-20 min-h-screen pb-20'>
         <p className='font-bold text-3xl'>Paddi AI</p>
 
         <div className='w-full my-20 flex items-center justify-center'>

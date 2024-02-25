@@ -33,7 +33,7 @@ const Page = () => {
   if(!data) return redirect('sign-in');
 
   return (
-    <main>
+    <main className='pb-20'>
       <section className="bg-[#045481] w-full rounded-b-[4em] md:rounded-b-[6em] p-10 md:p-20">
         <div>
           <div className='w-full flex items-center justify-between mb-5'>

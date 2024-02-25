@@ -19,7 +19,16 @@ import vector from '@/public/assets/Vector.svg';
 import flag from '@/public/assets/Solidflag.svg';
 import happy from '@/public/assets/happy.svg';
 import mobile from '@/public/assets/SolidMobile.svg';
-import happy2 from '@/public/moodIcons/happy2.svg'
+import happy2 from '@/public/moodIcons/happy2.svg';
+
+//Journal Emojis..
+import angryEmoji from '@/public/journal/angry.svg';
+import sadEmoji from '@/public/journal/sad.svg';
+import neutralEmoji from '@/public/journal/neutral.svg';
+import happyEmoji from '@/public/journal/happy.svg';
+import excitedEmoji from '@/public/journal/excited.svg';
+export const journalEmojis = [angryEmoji, sadEmoji, neutralEmoji, happyEmoji, excitedEmoji]
+
 export const healths = [
     {
         icon: heart,

@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className=''>
         <ReduxProvider>
           {children}
           <Toaster position='top-right' />

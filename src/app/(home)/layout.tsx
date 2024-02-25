@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <div className='w-full flex flex-col items-center'>
-      <div className='bg-[#F2F2F2] min-h-screen w-full pb-20'>{children}</div>
+      <div className='bg-[#F2F2F2] min-h-screen w-full'>{children}</div>
       <BottomNav />
     </div>
   )

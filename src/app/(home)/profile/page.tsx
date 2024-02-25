@@ -18,7 +18,7 @@ const Page = () => {
     const { data } = signedUpUser;
 
   return (
-    <section className='p-10 md:p-20'>
+    <section className='p-10 md:p-20 pb-20'>
         <nav className='flex items-center text-brown-80 font-bold text-xl'>
             <IoIosArrowBack />
             <p>Profile</p>
