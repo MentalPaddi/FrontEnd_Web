@@ -1,8 +1,11 @@
 import AssessmentNav from "@/components/shared/assessmentNav";
 import Button from "@/components/shared/button";
 import rightArrow from '@/public/assets/arrowRight.svg';
+import { useState } from "react";
 
 const Page = () => {
+  const [loading, setLoading] = useState(false);
+
   return (
     <section className="p-5">
         <AssessmentNav pageNumber="12" />
@@ -14,7 +17,7 @@ const Page = () => {
                     <textarea name="" id="" cols={40} rows={10} className="p-5  rounded-xl my-10"></textarea>
                 </div>
             </div>
-            <Button title="Continue" icon={rightArrow} />
+            <Button title="Continue" icon={rightArrow} loading={loading}/>
         </form>
     </section>
   )
