@@ -12,7 +12,7 @@ import { useSignInUserMutation } from '@/api/authApi';
 import { selectLoader, setLoader } from '@/redux/features/loaderSlice';
 import { Oval } from 'react-loader-spinner';
 import toast from 'react-hot-toast';
-import { setSignInUser } from '@/redux/features/authSlice';
+import { setSignInUser, setSignUpUser } from '@/redux/features/authSlice';
 import { useRouter } from 'next/navigation';
 
 const Page = () => {
@@ -38,20 +38,25 @@ const Page = () => {
         const userDetails = await signInUser(userData);
         dispatch(setLoader(''))
 
+        console.log({userDetails})
+
         const { error, data }:any = userDetails;
 
-        if (error?.data) {
-            toast.error(error?.data?.detail)
-            return
-        } else if (error?.error) {
-            toast.error(error.error)
-            return
+        if (error) {
+            if (error?.data) {
+                toast.error(error?.data?.error)
+                return
+            } else if (error?.error) {
+                toast.error(error.error)
+                return
+            }
         }
         
 
         if(data){
             toast.success('Signed In Successfully');
             dispatch(setSignInUser(data));
+            dispatch(setSignUpUser(null));
             router.push('/home')
         }
 

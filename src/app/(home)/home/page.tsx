@@ -26,15 +26,15 @@ import CircularProgressBar from '@/components/shared/circulerProgress';
 import Link from 'next/link';
 
 const Page = () => {
-  const { signedUpUser } = useAppSelector(selectAuth);
+  const { signedInUser } = useAppSelector(selectAuth);
 
-  const { data } = signedUpUser;
+  console.log({signedInUser});
 
-  if(!data) return redirect('sign-in');
+  if(!signedInUser) return redirect('sign-in');
 
   return (
     <main className='pb-20'>
-      <section className="bg-[#045481] w-full rounded-b-[4em] md:rounded-b-[6em] p-10 md:p-20">
+      <section className="bg-[#045481] rounded-b-2xl w-full p-10 md:p-20">
         <div>
           <div className='w-full flex items-center justify-between mb-5'>
             <div className='rounded-full bg-white h-20 w-20'></div>
@@ -44,15 +44,9 @@ const Page = () => {
           </div>
           <div className='text-white'>
             <p className='text-3xl'>Good Day</p>
-            <p className='font-bold text-2xl'>{data.first_name}!</p>
+            <p className='font-bold text-2xl'>{signedInUser.first_name}!</p>
             {/* <p className='mt-5'>How are you feeling today?</p> */}
           </div>
-          {/* <div className='flex items-center gap-3 my-4 overflow-x-auto'>
-            <div className='h-20 w-20 bg-white rounded-lg'></div>
-            <div className='h-20 w-20 bg-white rounded-lg'></div>
-            <div className='h-20 w-20 bg-white rounded-lg'></div>
-            <div className='h-20 w-20 bg-white rounded-lg'></div>
-          </div> */}
         </div>
       </section>
       
@@ -129,7 +123,7 @@ const Page = () => {
 
             <div>
               <p className='font-bold'>Journal</p>
-              <p className='text-[#806A6A]'>43 Day Streak</p>
+              <p className='text-[#806A6A]'>0 Day Streak</p>
             </div>
           </div>
         </div> 
@@ -141,7 +135,7 @@ const Page = () => {
           <div className='p-3 w-[13em] bg-slate-600 rounded-xl'>
             <p className='text-white font-semibold w-[12em]'>Mental Score</p>
             <div className='w-full flex justify-center mt-3'>
-              <CircularProgressBar percentage={80} radius={60} strokeWidth={10} color='#08EF49' />
+              <CircularProgressBar percentage={signedInUser?.assessment_data?.mental_score} radius={60} strokeWidth={10} color='#08EF49' />
             </div>
           </div>
           <div className='h-full text-white p-3 bg-[#ED7E1C] rounded-xl'>
@@ -182,9 +176,9 @@ const Page = () => {
           </div>
         </div>
 
-        <div className='p-10 w-full max-w-[25em] bg-white mx-auto py-12 my-7 text-[#707070] text-2xl rounded-3xl'>
+        <div className='p-10 w-full max-w-[25em] mx-auto py-12 my-7 text-[#707070] text-2xl rounded-3xl'>
           <p className='font-bold mb-2'>Qoute of the day</p>
-          <p>“It is better to conquer yourself than to win a thousand battles”</p>
+          <p className='text-[.75em]'>“It is better to conquer yourself than to win a thousand battles”</p>
           <Image className='relative left-[90%] mt-2' src={quoteIcon} width={40} height={40}  alt='quote'/>
         </div>
 

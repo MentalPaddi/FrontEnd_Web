@@ -1,3 +1,5 @@
+'use client'
+
 import AssessmentNav from "@/components/shared/assessmentNav";
 import Button from "@/components/shared/button";
 import rightArrow from '@/public/assets/arrowRight.svg';

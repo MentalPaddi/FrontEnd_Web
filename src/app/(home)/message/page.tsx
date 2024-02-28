@@ -47,7 +47,7 @@ const Page = () => {
         <div className='w-full'>
             <p className='font-semibold text-brown-80 text-xl'>Recent</p>
             <div className='p-5 mt-3 bg-white rounded-xl'>
-                <div className='flex items-center border-b-[1px] border-[#a2a2a2] pb-4 pr-5 justify-between'>
+                <div className='flex items-center border-[#a2a2a2] pb-4 pr-5 justify-between'>
                     <div className='flex items-center gap-3 text-brown-80'>
                         <Image src={dp} width={70} height={70} alt='image' />
                         <div>
@@ -55,10 +55,11 @@ const Page = () => {
                             <p>Message</p>
                         </div>
                     </div>
-                    <div className='w-5 h-5 rounded-full bg-primary'>
+                    <div className='p-3 rounded-md text-brown-80 font-bold cursor-pointer'>
+                        <p>Message</p>
                     </div>
                 </div>
-                <div className='flex items-center border-b-[1px] border-[#a2a2a2] py-4 pr-5 justify-between'>
+                <div className='flex items-center border-[#a2a2a2] py-4 pr-5 justify-between'>
                     <div className='flex items-center gap-3 text-brown-80'>
                         <Image src={dp} width={70} height={70} alt='image' />
                         <div>
@@ -66,10 +67,12 @@ const Page = () => {
                             <p>Message</p>
                         </div>
                     </div>
-                    <div className='w-5 h-5 rounded-full bg-primary'>
+                    <div className='p-3 rounded-md text-brown-80 font-bold cursor-pointer'>
+                        <p>Message</p>
+
                     </div>
                 </div>
-                <div className='flex items-center border-b-[1px] border-[#a2a2a2] py-4 pr-5 justify-between'>
+                <div className='flex items-center border-[#a2a2a2] py-4 pr-5 justify-between'>
                     <div className='flex items-center gap-3 text-brown-80'>
                         <Image src={dp} width={70} height={70} alt='image' />
                         <div>
@@ -77,10 +80,11 @@ const Page = () => {
                             <p>Message</p>
                         </div>
                     </div>
-                    <div className='w-5 h-5 rounded-full bg-primary'>
+                    <div className='p-3 rounded-md text-brown-80 font-bold cursor-pointer'>
+                        <p>Message</p>
                     </div>
                 </div>
-                <div className='flex items-center border-b-[1px] border-[#a2a2a2] py-4 pr-5 justify-between'>
+                <div className='flex items-center border-[#a2a2a2] py-4 pr-5 justify-between'>
                     <div className='flex items-center gap-3 text-brown-80'>
                         <Image src={dp} width={70} height={70} alt='image' />
                         <div>
@@ -88,10 +92,11 @@ const Page = () => {
                             <p>Message</p>
                         </div>
                     </div>
-                    <div className='w-5 h-5 rounded-full bg-primary'>
+                    <div className='p-3 rounded-md text-brown-80 font-bold cursor-pointer'>
+                        <p>Message</p>
                     </div>
                 </div>
-                <div className='flex items-center border-b-[1px] border-[#a2a2a2] py-4 pr-5 justify-between'>
+                <div className='flex items-center border-[#a2a2a2] py-4 pr-5 justify-between'>
                     <div className='flex items-center gap-3 text-brown-80'>
                         <Image src={dp} width={70} height={70} alt='image' />
                         <div>
@@ -99,10 +104,11 @@ const Page = () => {
                             <p>Message</p>
                         </div>
                     </div>
-                    <div className='w-5 h-5 rounded-full bg-primary'>
+                    <div className='p-3 rounded-md text-brown-80 font-bold cursor-pointer'>
+                        <p>Message</p>
                     </div>
                 </div>
-                <div className='flex items-center border-b-[1px] border-[#a2a2a2] py-4 pr-5 justify-between'>
+                <div className='flex items-center border-[#a2a2a2] py-4 pr-5 justify-between'>
                     <div className='flex items-center gap-3 text-brown-80'>
                         <Image src={dp} width={70} height={70} alt='image' />
                         <div>
@@ -110,10 +116,11 @@ const Page = () => {
                             <p>Message</p>
                         </div>
                     </div>
-                    <div className='w-5 h-5 rounded-full bg-primary'>
+                    <div className='p-3 rounded-md text-brown-80 font-bold cursor-pointer'>
+                        <p>Message</p>
                     </div>
                 </div>
-                <div className='flex items-center border-b-[1px] border-[#a2a2a2] py-4 pr-5 justify-between'>
+                <div className='flex items-center border-[#a2a2a2] py-4 pr-5 justify-between'>
                     <div className='flex items-center gap-3 text-brown-80'>
                         <Image src={dp} width={70} height={70} alt='image' />
                         <div>
@@ -121,10 +128,11 @@ const Page = () => {
                             <p>Message</p>
                         </div>
                     </div>
-                    <div className='w-5 h-5 rounded-full bg-primary'>
+                    <div className='p-3 rounded-md text-brown-80 font-bold cursor-pointer'>
+                        <p>Message</p>
                     </div>
                 </div>
-                <div className='flex items-center border-b-[1px] border-[#a2a2a2] py-4 pr-5 justify-between'>
+                <div className='flex items-center border-[#a2a2a2] py-4 pr-5 justify-between'>
                     <div className='flex items-center gap-3 text-brown-80'>
                         <Image src={dp} width={70} height={70} alt='image' />
                         <div>
@@ -132,10 +140,11 @@ const Page = () => {
                             <p>Message</p>
                         </div>
                     </div>
-                    <div className='w-5 h-5 rounded-full bg-primary'>
+                    <div className='p-3 rounded-md text-brown-80 font-bold cursor-pointer'>
+                        <p>Message</p>
                     </div>
                 </div>
-                <div className='flex items-center border-b-[1px] border-[#a2a2a2] py-4 pr-5 justify-between'>
+                <div className='flex items-center border-[#a2a2a2] py-4 pr-5 justify-between'>
                     <div className='flex items-center gap-3 text-brown-80'>
                         <Image src={dp} width={70} height={70} alt='image' />
                         <div>
@@ -143,10 +152,11 @@ const Page = () => {
                             <p>Message</p>
                         </div>
                     </div>
-                    <div className='w-5 h-5 rounded-full bg-primary'>
+                    <div className='p-3 rounded-md text-brown-80 font-bold cursor-pointer'>
+                        <p>Message</p>
                     </div>
                 </div>
-                <div className='flex items-center border-b-[1px] border-[#a2a2a2] py-4 pr-5 justify-between'>
+                <div className='flex items-center border-[#a2a2a2] py-4 pr-5 justify-between'>
                     <div className='flex items-center gap-3 text-brown-80'>
                         <Image src={dp} width={70} height={70} alt='image' />
                         <div>
@@ -154,10 +164,11 @@ const Page = () => {
                             <p>Message</p>
                         </div>
                     </div>
-                    <div className='w-5 h-5 rounded-full bg-primary'>
+                    <div className='p-3 rounded-md text-brown-80 font-bold cursor-pointer'>
+                        <p>Message</p>
                     </div>
                 </div>
-                <div className='flex items-center border-b-[1px] border-[#a2a2a2] py-4 pr-5 justify-between'>
+                <div className='flex items-center border-[#a2a2a2] py-4 pr-5 justify-between'>
                     <div className='flex items-center gap-3 text-brown-80'>
                         <Image src={dp} width={70} height={70} alt='image' />
                         <div>
@@ -165,7 +176,8 @@ const Page = () => {
                             <p>Message</p>
                         </div>
                     </div>
-                    <div className='w-5 h-5 rounded-full bg-primary'>
+                    <div className='p-3 rounded-md text-brown-80 font-bold cursor-pointer'>
+                        <p>Message</p>
                     </div>
                 </div>
             </div>

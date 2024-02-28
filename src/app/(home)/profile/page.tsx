@@ -11,11 +11,14 @@ import dp from '@/public/assets/image.svg';
 import Link from 'next/link';
 import { useAppSelector } from '@/redux/hooks';
 import { selectAuth } from '@/redux/features/authSlice';
+import { redirect } from 'next/navigation';
 
 const Page = () => {
-    const { signedUpUser } = useAppSelector(selectAuth);
+    const { signedInUser } = useAppSelector(selectAuth);
 
-    const { data } = signedUpUser;
+    if(!signedInUser) return redirect('/sign-in')
+
+    console.log(signedInUser)
 
   return (
     <section className='p-10 md:p-20 pb-20'>
@@ -25,7 +28,7 @@ const Page = () => {
         </nav>
         <div className='items-center flex justify-center mt-10 text-brown-80 flex-col font-bold'>
             <Image src={dp} height={100} width={100} alt='profile picture' />
-            <p className='text-2xl mb-5'>{data.first_name}</p>
+            <p className='text-2xl mb-5'>{signedInUser.first_name}</p>
             <div className='text-primary text-lg flex items-center gap-2'>
                 <Link href='/edit-profile'><p>Edit Profile</p></Link>
                 <IoMdArrowRoundForward className='w-7 h-7'/>
@@ -35,11 +38,11 @@ const Page = () => {
         <div className='flex w-full justify-around my-10 h-[10em] items-center'>
             <div className='w-1/3 text-center'>
                 <p className='opacity-70'>Age</p>
-                <p className='font-bold text-4xl'>--yrs</p>
+                <p className='font-bold text-4xl'>{signedInUser?.assessment_data?.age}yrs</p>
             </div>
             <div className='w-1/3 border-x-[2px] h-full flex flex-col justify-center text-center'>
                 <p className='opacity-70'>Weight</p>
-                <p className='font-bold text-4xl'>--Kg</p>
+                <p className='font-bold text-4xl'>{signedInUser?.assessment_data.weight}Kg</p>
             </div>
             <div className='w-1/3 text-center'>
                 <p className='opacity-70'>Height</p>

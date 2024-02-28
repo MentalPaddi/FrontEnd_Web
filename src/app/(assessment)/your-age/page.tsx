@@ -27,7 +27,7 @@ const Page = () => {
 
   const onSubmit: SubmitHandler<Inputs> = ({age}) => {
       setLoading(!loading)
-      dispatch(setAssessments({...assessments, age}))
+      dispatch(setAssessments({...assessments, age: Number(age)}))
       router.push('/your-weight')
   }
 

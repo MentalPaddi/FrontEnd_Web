@@ -7,10 +7,12 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { selectAssessments, setAssessments } from "@/redux/features/assessmentSlice";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const Page = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
+  const [loading, setLoading] = useState(false);
   const { assessments } = useAppSelector(selectAssessments);
 
   interface Inputs {
@@ -24,7 +26,8 @@ const Page = () => {
     } = useForm<Inputs>();
 
 const onSubmit: SubmitHandler<Inputs> = ({weight}) => {
-    dispatch(setAssessments({...assessments, weight}))
+    setLoading(!loading)
+    dispatch(setAssessments({...assessments, weight: Number(weight)}))
     router.push('/your-mood')
   }
 
@@ -43,7 +46,7 @@ const onSubmit: SubmitHandler<Inputs> = ({weight}) => {
                     { errors.weight && <span className="text-red-500">This field is required</span>}
                 </div>
             </div>
-            <Button title="Continue" icon={rightArrow} />
+            <Button title="Continue" icon={rightArrow} loading={loading}/>
         </form>
     </section>
   )

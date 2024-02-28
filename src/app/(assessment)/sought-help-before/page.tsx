@@ -20,7 +20,7 @@ const Page = () => {
 
   const handleSubmit = () => {
     setLoading(!loading)
-    dispatch(setAssessments({...assessments, is_professional_help: profHelp}));
+    dispatch(setAssessments({...assessments, is_professional_help: Number(profHelp)+1}));
     router.push('/experiencing-distress');
   }
 

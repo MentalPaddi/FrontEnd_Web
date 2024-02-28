@@ -35,7 +35,7 @@ const Page = () => {
               <li><Link href='/faqs'>FAQs</Link> </li>
               <li><Link href='/services'>Services</Link> </li>
               <li><Link href='/contact'>Contact</Link> </li>
-              <li className='bg-slate-900/50 w-[6em] h-[2.5em] flex items-center cursor-pointer justify-center text-white font-medium rounded-lg'><Link href='/sign-up'>Sign In</Link> </li>
+              <li className='bg-slate-900/50 w-[6em] h-[2.5em] flex items-center cursor-pointer justify-center text-white font-medium rounded-lg'><Link href='/sign-up'>Sign Up</Link> </li>
             </ul>
           </div>
         </div>
@@ -51,7 +51,7 @@ const Page = () => {
                     Frustrated?<br />
                     Depressed?<br />
                 </p>
-                <Link href='/sign-up'><button className='bg-slate-900/50 p-3 my-10 text-white font-semibold rounded-lg h-[3em]'>Speak to your paddi</button></Link>
+                <Link href='/sign-in'><button className='bg-slate-900/50 p-3 my-10 text-white font-semibold rounded-lg h-[3em]'>Speak to your paddi</button></Link>
             </div>
     </div>
     </section>

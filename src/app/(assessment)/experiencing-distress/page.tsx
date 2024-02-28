@@ -22,7 +22,7 @@ const Page = () => {
 
   const handleSubmit = () => {
     setLoading(!loading)
-    dispatch(setAssessments({...assessments, is_physical_distress: distress }))
+    dispatch(setAssessments({...assessments, is_physical_distress: Number(distress)+1 }))
     router.push('/sleep-quality');
   }
 

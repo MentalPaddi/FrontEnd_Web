@@ -21,7 +21,7 @@ const Page = () => {
   const handleSubmit = () => {
     if(!medication) return toast.error('Youve not selected any medications');
     setLoading(!loading)
-    dispatch(setAssessments({...assessments, medications: medication }))
+    dispatch(setAssessments({...assessments, medications: 1 }))
     router.push('/other-symptoms');
   }
   

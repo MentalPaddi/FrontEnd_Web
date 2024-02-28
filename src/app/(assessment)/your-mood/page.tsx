@@ -16,18 +16,21 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { selectAssessments, setAssessments } from "@/redux/features/assessmentSlice";
 import { useRouter } from "next/navigation";
 
-
+const moods = ['depressed', 'sad', 'neutral', 'happy', 'overjoyed']
 
 const Page = () => {
   const router = useRouter();
   const [ mood, setMood ] = useState('');
   const dispatch = useAppDispatch();
+  const [loading, setLoading] = useState(false);
   const { assessments } = useAppSelector(selectAssessments)
 
   const handleSubmit = () => {
     if(!mood) return toast.error('You\'ve not selected your mood')
-
-    dispatch(setAssessments({...assessments, mood}))
+    setLoading(!loading)
+    const selectedMood = moods.filter((mod, i)=> mod === mood);
+    
+    dispatch(setAssessments({...assessments, mood: moods.indexOf(selectedMood[0])+1 }))
     router.push('/sought-help-before')
   }
 
@@ -62,7 +65,7 @@ const Page = () => {
                 </div>
             </div>
             <div onClick={()=> handleSubmit()}>
-              <Button title="Continue" icon={rightArrow} />
+              <Button title="Continue" icon={rightArrow} loading={loading}/>
             </div>
         </div>
     </section>

@@ -13,7 +13,7 @@ import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { selectLoader, setLoader } from '@/redux/features/loaderSlice';
 import { Oval } from 'react-loader-spinner';
-import { setSignUpUser } from '@/redux/features/authSlice';
+import { setSignInUser, setSignUpUser } from '@/redux/features/authSlice';
 
 const Page = () => {
     const router = useRouter();
@@ -49,27 +49,34 @@ const Page = () => {
    
         const { error, data }: any = signUpUserDetails;
 
+        console.log({error, data})
+
         console.log(signUpUserDetails);
 
-        if (error?.data?.email) {
-            error.data.email.map((err:string)=>{
-                toast.error(err);
-            })
-            return;
-          } else if ( error?.data?.password ) {
-            error.data.password.map((err:string)=>{
-                toast.error(err);
-            })
+        if (error) {
+            if (error?.data?.email) {
+                error.data.email.map((err:string)=>{
+                    toast.error(err);
+                })
+                return;
+              } else if ( error?.data?.password ) {
+                error.data.password.map((err:string)=>{
+                    toast.error(err);
+                })
+                return
+              } else if (error?.error) {
+                toast.error('Network Failure');
+                return
+              }
+
             return
-          } else if (error?.error) {
-            toast.error('Network Failure');
-            return
-          }
+        }
 
         if (data) {
             toast.success(data.message)
             console.log(data)
-            dispatch(setSignUpUser(data))
+            dispatch(setSignUpUser(signUpUserDetails))
+            dispatch(setSignInUser(null))
         }
 
         router.push('/your-health'); 

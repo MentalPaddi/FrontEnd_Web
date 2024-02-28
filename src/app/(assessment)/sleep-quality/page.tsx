@@ -13,6 +13,15 @@ import { selectAssessments, setAssessments } from "@/redux/features/assessmentSl
 import { useRouter } from 'next/navigation';
 import toast from "react-hot-toast";
 
+const qualities = [
+     'Excellent',
+     'Good',
+     'Fair',
+     'Poor',
+     'Worst'
+]
+
+
 const Page = () => {
   const [ sleepQuality, setSleepQuality ] = useState('')
   const [loading, setLoading] = useState(false);
@@ -23,7 +32,8 @@ const Page = () => {
   const handleSubmit = () => {
     if(!sleepQuality) return toast.error('Youve not told use your sleep quality');
     setLoading(!loading)
-    dispatch(setAssessments({...assessments, sleep_quality: sleepQuality}));
+    const quality = qualities.filter((qual) => qual === sleepQuality)
+    dispatch(setAssessments({...assessments, sleep_quality: qualities.indexOf(quality[0])+1}));
     router.push('/taking-medications');
   }
 
