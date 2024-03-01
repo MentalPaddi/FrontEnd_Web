@@ -35,6 +35,7 @@ const Page = () => {
 
       const onSubmit: SubmitHandler<Inputs> = async(userData) => {
         dispatch(setLoader('sign-in'))
+            dispatch(setSignInUser(null));
         const userDetails = await signInUser(userData);
         dispatch(setLoader(''))
 
