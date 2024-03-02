@@ -35,10 +35,9 @@ const Page = () => {
 
       const onSubmit: SubmitHandler<Inputs> = async(userData) => {
         dispatch(setLoader('sign-in'))
+        dispatch(setSignInUser(null));
         const userDetails = await signInUser(userData);
         dispatch(setLoader(''))
-
-        console.log({userDetails})
 
         const { error, data }:any = userDetails;
 
@@ -50,6 +49,8 @@ const Page = () => {
                 toast.error(error.error)
                 return
             }
+            toast.error('Something went wrong');
+            return
         }
         
 

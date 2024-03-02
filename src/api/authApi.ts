@@ -1,6 +1,7 @@
 // api.ts
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { RootState } from '@/redux/store';  
+import { RootState } from '@/redux/store';
+import axios from 'axios';
 
 const baseUrl = 'https://donbot-6nb4.onrender.com';
 
@@ -24,11 +25,9 @@ export const authApi = createApi({
         const signupToken = (getState() as RootState).auth?.signedUpUser?.data?.access;
         const signinToken = (getState() as RootState).auth?.signedInUser?.access;
       if (signinToken) {
-        console.log('in')
         headers.set('authorization', `Bearer ${signinToken}`);
         return headers;
       } else if (signupToken) {
-        console.log('up')
         headers.set('authorization', `Bearer ${signupToken}`);
         return headers;
       } else {
@@ -76,7 +75,7 @@ export const authApi = createApi({
     }), 
     createJournal: builder.mutation<any, any>({ 
       query: (body) => ({
-        url: '/accounts/profile_update/',
+        url: 'journal/create/',
         method: 'POST',
         body,
         headers: {
@@ -84,6 +83,12 @@ export const authApi = createApi({
         }
       }),
     }), 
+    getAllUsers: builder.query<any, void>({
+      query: () => ({
+        url: '/accounts/all_users',
+        method: 'GET',
+      }),
+    }),
   }),
 });
 
@@ -93,4 +98,21 @@ export const {
   useSubmitAssessmentMutation,
   useUpdateProfileMutation,
   useCreateJournalMutation,
+  useGetAllUsersQuery,
 } = authApi;
+
+
+export const fetchAsync = async (url:string, accessToken:string) => {
+  const mainurl = `${baseUrl}${url}`;
+  try {
+    const response = await axios.get(mainurl, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    });
+    return response.data;
+  } catch (error) {
+    // Handle errors
+    console.error('Error fetching data:', error);
+  }
+};

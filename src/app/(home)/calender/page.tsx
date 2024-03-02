@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FaCirclePlay, FaRegClock } from 'react-icons/fa6';
 import { IoCalendarOutline, IoNotifications } from 'react-icons/io5'
 
@@ -44,7 +45,9 @@ const Page = () => {
                                 </div>
                             </div>
                             <div className='flex items-center gap-10 mt-4'>
-                                <button className='text-white font-bold p-3 rounded-xl bg-primary '>Reschedule</button>
+                                <Link href='/book-session'>
+                                    <button className='text-white font-bold p-3 rounded-xl bg-primary '>Reschedule</button>
+                                </Link>
                                 <p className='font-bold text-primary'>Join Now</p>
                             </div>
                         </div>
@@ -68,10 +71,12 @@ const Page = () => {
                                     <p className='text-sm text-brown-80'>7:30 PM - 8:30 PM</p>
                                 </div>
                             </div>
-                            <div className='flex items-center gap-10 mt-4'>
-                                <button className='text-white font-bold p-3 rounded-xl bg-primary'>Re-book</button>
-                                <p className='font-bold text-primary'>Join Now</p>
-                            </div>
+                           <Link href='/book-session'>
+                                <div className='flex items-center gap-10 mt-4'>
+                                    <button className='text-white font-bold p-3 rounded-xl bg-primary'>Re-book</button>
+                                    <p className='font-bold text-primary'>Join Now</p>
+                                </div>
+                           </Link>
                         </div>
                     </div>
                     <div className='w-full mt-5 p-5 rounded-2xl bg-[#71ccea]'>

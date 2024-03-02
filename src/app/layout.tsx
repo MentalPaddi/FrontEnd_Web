@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import type { Metadata } from 'next';
 import { Toaster } from 'react-hot-toast';
 import ReduxProvider from '@/redux/provider';
@@ -15,6 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body className=''>
         <ReduxProvider>
           {children}

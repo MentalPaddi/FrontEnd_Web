@@ -27,7 +27,7 @@ import sadEmoji from '@/public/journal/sad.svg';
 import neutralEmoji from '@/public/journal/neutral.svg';
 import happyEmoji from '@/public/journal/happy.svg';
 import excitedEmoji from '@/public/journal/excited.svg';
-export const journalEmojis = [angryEmoji, sadEmoji, neutralEmoji, happyEmoji, excitedEmoji]
+export const journalEmojis = [ excitedEmoji, happyEmoji, neutralEmoji, sadEmoji, angryEmoji]
 
 export const healths = [
     {
@@ -99,6 +99,8 @@ export const sleepQualities = [
         icon: depressed
     }
 ]
+
+export const journalIcons = [overjoyed, happy, nuetral, sad, depressed]
 
 // Medications
 export const medications = [

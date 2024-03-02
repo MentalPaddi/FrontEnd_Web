@@ -7,25 +7,34 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { HiOutlineMail } from "react-icons/hi";
 import warning from '@/public/assets/warning.svg';
-import dp from '@/public/assets/image.svg';
+import dp from '@/public/images/profile.png';
 import Link from 'next/link';
-import { useAppSelector } from '@/redux/hooks';
-import { selectAuth } from '@/redux/features/authSlice';
-import { redirect } from 'next/navigation';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { selectAuth, setSignInUser, setSignUpUser } from '@/redux/features/authSlice';
+import { redirect, useRouter } from 'next/navigation';
+import { IoLogOutOutline } from "react-icons/io5";
 
 const Page = () => {
     const { signedInUser } = useAppSelector(selectAuth);
+    const dispatch = useAppDispatch();
+    const router = useRouter()
 
     if(!signedInUser) return redirect('/sign-in')
 
-    console.log(signedInUser)
+    const handleLogOut = () => {
+        dispatch(setSignInUser(null))
+        dispatch(setSignUpUser(null))
+
+    }
 
   return (
     <section className='p-10 md:p-20 pb-20'>
+       <Link href='/home'>
         <nav className='flex items-center text-brown-80 font-bold text-xl'>
-            <IoIosArrowBack />
-            <p>Profile</p>
+                <IoIosArrowBack />
+                <p>Profile</p>
         </nav>
+        </Link>
         <div className='items-center flex justify-center mt-10 text-brown-80 flex-col font-bold'>
             <Image src={dp} height={100} width={100} alt='profile picture' />
             <p className='text-2xl mb-5'>{signedInUser.first_name}</p>
@@ -72,12 +81,12 @@ const Page = () => {
             </div>
         </div>
 
-        <div className='mt-10'>
+        <div className='mt-10 cursor-pointer' onClick={()=> handleLogOut()}>
             <p className='font-bold text-xl mb-5 text-brown-80'>Log Out</p>
             <div className='w-full flex items-center bg-white p-3 rounded-3xl justify-between'>
                 <div className='flex items-center gap-3 w-full'>
                     <div className='bg-[#D9D9D9] rounded-3xl p-3 w-[4em] '>
-                        <Image src={warning} width={50} height={50} alt='warning' />
+                        <IoLogOutOutline className='W-10 h-10 text-5xl' />
                     </div>
                     <p className='font-semibold'>Logout</p>
                 </div>             

@@ -9,6 +9,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSubmitAssessmentMutation } from "@/api/authApi";
 import toast from "react-hot-toast";
+import { selectAuth, setSignInUser } from "@/redux/features/authSlice";
 
 const Page = () => {
   const [ level, setLevel ] = useState(0)
@@ -22,7 +23,7 @@ const Page = () => {
 
   const handleSubmit = async() => {
     setLoading(!loading)
-    console.log(assessments)
+    dispatch(setSignInUser(null));
     const result = await submitAccessment({...assessments, stress_level: level+1 })
     setLoading(!loading)
     const { error, data }:any = result; 

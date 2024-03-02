@@ -4,12 +4,14 @@ import { RootState } from '../store';
 interface AuthState {
   signedUpUser: any;
   signedInUser: any;
+  userChattingTo: any;
 }
 
 // Define initial state
 const initialState: AuthState = {
     signedUpUser: null,
-    signedInUser: null
+    signedInUser: null,
+    userChattingTo: null
 };
 
 // Create a slice
@@ -23,7 +25,10 @@ const authSlice = createSlice({
     setSignInUser: (state, action: PayloadAction<any>) => {
       state.signedInUser = action.payload
     },
-    signOut: (state, action: PayloadAction<any>) => {
+    setChatUser: (state, action: PayloadAction<any>) => {
+      state.userChattingTo = action.payload;
+    },
+    signOut: (state) => {
       state = initialState;
     }
   }
@@ -31,5 +36,5 @@ const authSlice = createSlice({
 
 // Export actions and reducer
 export const selectAuth = (state: RootState) => state.auth;
-export const { setSignUpUser, setSignInUser, signOut } = authSlice.actions;
+export const { setSignUpUser, setSignInUser, signOut, setChatUser } = authSlice.actions;
 export default authSlice.reducer;

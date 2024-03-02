@@ -1,8 +1,30 @@
+'use client'
+
+import { fetchAsync } from '@/api/authApi';
+import { selectAuth } from '@/redux/features/authSlice';
+import { useAppSelector } from '@/redux/hooks';
 import Link from 'next/link'
-import React from 'react'
+import { redirect } from 'next/navigation';
+import React, { useEffect, useState } from 'react'
 import { IoIosArrowBack } from 'react-icons/io'
+import { journalIcons } from '@/constants';
 
 const Page = () => {
+    const [myJournals, setMyJournals] = useState([]);
+    const { signedInUser } = useAppSelector(selectAuth);
+
+    if(!signedInUser) redirect('sign-in');
+    const token = signedInUser.access;
+    
+    useEffect(()=> {
+        const fetchJournls = async () => {
+            const journals = await fetchAsync('/journal/create/', token);
+            setMyJournals(journals);
+        }
+
+         fetchJournls();
+    }, [token])
+
   return (
     <section className='p-10 md:p-20'>
         <nav>
@@ -14,24 +36,39 @@ const Page = () => {
             </Link>
         </nav>
 
-        <div className='w-full flex items-center text-[#333]'>
-            <div className='w-1/2 flex flex-col gap-5 p-5 border-r-2 '>
-                <p className='border-2 bg-white p-3 rounded-2xl'>For athletes, high altitude produces two contradictory effects on performance...
-                    <p className='font-medium mt-2'>22.09.2024</p>
-                </p>
-                <p className='border-2 bg-white p-3 rounded-2xl'>First published 11th June 2015. Revised and updated 23rd June 2022. Everyone should have a space to sit outside in the summer. Ev...
-                <p className='font-medium mt-2'>22.09.2024</p>
-                </p>
+        {myJournals ? (
+            <div className='flex items-center w-full'>
+            <div className='p-5 w-1/2 mt-3 border-r-2'>
+            {myJournals.map(({journal_text, created_at}:{journal_text:string, created_at:string}, index) => {
+              
+              if (index % 2 == 0) {
+                 const [datePart, timePart] = created_at.split('T');
+                return(
+                        <p className='border-2 bg-white p-3 rounded-2xl mt-3' key={index}>{journal_text}
+                            <span className='font-medium mt-2 block'>{datePart}</span>
+                        </p>
+                )
+              }
+            })}
             </div>
-            <div className='w-1/2 flex flex-col gap-5 p-5'>
-                <p className='border-2 bg-white p-3 rounded-2xl'>I’m a research-focused UX Designer & Writer. I love working with small and medium-scale businesses to design, build, and launch cutting-e...
-                <p className='font-medium mt-2'>22.09.2024</p>
-                </p>
-                <p className='border-2 bg-white p-3 rounded-2xl'>Physical space is often conceived in three linear dimensions, although modern physici...
-                <p className='font-medium mt-2'>22.09.2024</p>
-                </p>
+            <div className='p-5 w-1/2'>
+            {myJournals.map(({journal_text, created_at}:{journal_text:string, created_at:string}, index) => {
+              
+              if (index % 2 !== 0) {
+                const [datePart, timePart] = created_at.split('T');
+                return(
+                        <p className='border-2 bg-white p-3 rounded-2xl mt-3' key={index}>{journal_text}
+                            <span className='font-medium mt-2 block'>{datePart}</span>
+                        </p>
+                )
+              }
+            })}
             </div>
         </div>
+        ) : (
+            <p>Loading...</p>
+        )}
+        
     </section>
   )
 }

@@ -42,6 +42,8 @@ const Page = () => {
         const { password, password2 } = userData;
         if(password !== password2) return toast.error('Passwords dont match')
 
+        dispatch(setSignUpUser(null))
+        dispatch(setSignInUser(null))
         dispatch(setLoader('sign-up'))
         const signUpUserDetails = await signUpUser(userData)
         dispatch(setLoader(''));
@@ -50,8 +52,6 @@ const Page = () => {
         const { error, data }: any = signUpUserDetails;
 
         console.log({error, data})
-
-        console.log(signUpUserDetails);
 
         if (error) {
             if (error?.data?.email) {
@@ -68,13 +68,12 @@ const Page = () => {
                 toast.error('Network Failure');
                 return
               }
-
+              toast.error("Something went wrong");
             return
         }
 
         if (data) {
             toast.success(data.message)
-            console.log(data)
             dispatch(setSignUpUser(signUpUserDetails))
             dispatch(setSignInUser(null))
         }

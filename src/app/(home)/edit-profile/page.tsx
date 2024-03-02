@@ -9,8 +9,8 @@ const Page = () => {
     const [updateProfile] = useUpdateProfileMutation();
 
     type Inputs = {
-        first_name: string;
-        last_name: string;
+        // first_name: string;
+        // last_name: string;
         address: string;
         profile_pic: string;
         school: string;
@@ -24,16 +24,11 @@ const Page = () => {
       } = useForm<Inputs>();
 
     const onSubmit: SubmitHandler<Inputs> = async(userData) => {
-
-        // const formData = new FormData();
-        // Object.entries(userData).forEach(([key, value]) => {
-        //   formData.append(key, value);
-        // });
-
-        console.log('submitting');
-        console.log(userData.profile_pic[0])
-        const result = await updateProfile({...userData, profile_pic: userData.profile_pic[0]});
-        console.log({result});
+        const formData = new FormData();
+        Object.entries(userData).forEach(([key, value]:any) => {
+          formData.append(key, value);
+        });
+        const result = await updateProfile(formData);
     }
 
   return (
@@ -44,14 +39,14 @@ const Page = () => {
                 <p>Edit Profile</p>
             </nav>
         </Link>
-        <form onSubmit={handleSubmit(onSubmit)} encType="multipart/form-data" className="text-brown-80 mt-10 mb-20">
+        <form onSubmit={handleSubmit(onSubmit)} className="text-brown-80 mt-10 mb-20">
             <div className="w-full p-5 font-semibold">
                 <p>First Name</p>
-                <input type="text" className="p-2 mt-2 w-full rounded-xl h-[3.2em]" {...register("first_name", { required: true })}/>
+                <input type="text" className="p-2 mt-2 w-full rounded-xl h-[3.2em]" />
             </div>
             <div className="w-full p-5 font-semibold">
                 <p>Last Name</p>
-                <input type="text" className="p-2 mt-2 w-full rounded-xl h-[3.2em]" {...register("last_name", { required: true })}/>
+                <input type="text" className="p-2 mt-2 w-full rounded-xl h-[3.2em]" />
             </div>
             <div className="w-full p-5 font-semibold">
                 <p>Phone Number</p>
