@@ -54,7 +54,6 @@ export default function RootLayout({
               <Image src={h} width={30} height={30} alt='h'/>
               <p className='font-bold text-2xl'>MentalPaddi</p>
             </div>
-            <p className='text-sm opacity-85'>At Mentalpaddi, we believe that reliable, high-quality hosting should be accessible to everyone. Thats why we offer a range of hosting plans to suit the needs of businesses and individuals alike. Our team of experts is always on hand to provide fast, friendly support, and we use the latest technology to ensure that your website is always up and running smoothly.</p>
           </div>
           <div className='w-full md:w-1/2 opacity-85 flex items-start mt-10 md:justify-center justify-start gap-10'>
             <div>

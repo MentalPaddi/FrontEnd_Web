@@ -4,7 +4,7 @@ import { AiOutlineLike } from "react-icons/ai";
 import { GoComment } from "react-icons/go";
 import { GoPencil } from "react-icons/go";
 import { PiShareFatLight } from "react-icons/pi";
-import profile from '@/public/images/profile.svg';
+import profile from '@/public/images/profile.png';
 
 const Page = () => {
   return (
