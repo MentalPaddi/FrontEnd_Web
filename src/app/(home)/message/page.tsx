@@ -19,7 +19,7 @@ const Page = () => {
                             <Image src={dp} width={70} height={70} alt='image' className='rounded-full' />
                             <div>
                                 <p className='font-semibold text-md'>Dr. Emily Patel, Psy.D., Licensed Clinical Psychologist</p>
-                                <p className='opacity-50 text-sm'>Hello Dr. Patel, I'm interested in scheduling an appointment to discuss some issues I've been facing.</p>
+                                <p className='opacity-50 text-sm'>Hello Dr. Patel, Im interested in scheduling an appointment to discuss some issues Ive been facing.</p>
                             </div>
                         </div>
                         <div className='p-3 rounded-md text-brown-80 opacity-85 text-sm cursor-pointer'>
@@ -31,7 +31,7 @@ const Page = () => {
                             <Image src={dp} width={70} height={70} alt='image' className='rounded-full' />
                             <div>
                                 <p className='font-semibold text-md'>Dr. Marcus Johnson, MD, Board-Certified Psychiatrist</p>
-                                <p className='opacity-50 text-sm'>Hi Dr. Johnson, I'm feeling a bit nervous about starting therapy.</p>
+                                <p className='opacity-50 text-sm'>Hi Dr. Johnson, Im feeling a bit nervous about starting therapy.</p>
                             </div>
                         </div>
                         <div className='p-3 rounded-md text-brown-80 opacity-85 text-sm cursor-pointer'>
@@ -43,7 +43,7 @@ const Page = () => {
                             <Image src={dp} width={70} height={70} alt='image' className='rounded-full' />
                             <div>
                                 <p className='font-semibold text-md'>Dr. Sophia Lee, Ph.D., Licensed Marriage and Family Therapist</p>
-                                <p className='opacity-50 text-sm'>Hello Dr. Lee, I wanted to update you on how I've been doing since our last session</p>
+                                <p className='opacity-50 text-sm'>Hello Dr. Lee, I wanted to update you on how Ive been doing since our last session</p>
                             </div>
                         </div>
                         <div className='p-3 rounded-md text-brown-80 opacity-85 text-sm cursor-pointer'>
@@ -55,7 +55,7 @@ const Page = () => {
                             <Image src={dp} width={70} height={70} alt='image' className='rounded-full' />
                             <div>
                                 <p className='font-semibold text-md'>Dr. Michael Thompson, Ed.D., Licensed Professional Counselor</p>
-                                <p className='opacity-50 text-sm'> Hi Dr. Thompson, I've been thinking a lot about my childhood lately, and I believe it's affecting my current relationships.</p>
+                                <p className='opacity-50 text-sm'> Hi Dr. Thompson, Ive been thinking a lot about my childhood lately, and I believe its affecting my current relationships.</p>
                             </div>
                         </div>
                         <div className='p-3 rounded-md text-brown-80 opacity-85 text-sm cursor-pointer'>
