@@ -12,7 +12,7 @@ import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
 
-export const currentEmotions = ["overjoyed", "happy", "neutral", "sad", "angry"]
+const currentEmotions = ["overjoyed", "happy", "neutral", "sad", "angry"]
 
 interface Inputs {
     journal: string;
