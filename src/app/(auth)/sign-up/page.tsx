@@ -36,9 +36,9 @@ const Page = () => {
         formState: { errors },
       } = useForm<Inputs>();
 
-      console.log(errors)
     const onSubmit: SubmitHandler<Inputs> = async(userData) => {
 
+       try {
         const { password, password2 } = userData;
         if(password !== password2) return toast.error('Passwords dont match')
 
@@ -46,7 +46,7 @@ const Page = () => {
         dispatch(setSignInUser(null))
         dispatch(setLoader('sign-up'))
         const signUpUserDetails = await signUpUser(userData)
-        dispatch(setLoader(''));
+    
 
    
         const { error, data }: any = signUpUserDetails;
@@ -78,7 +78,12 @@ const Page = () => {
             dispatch(setSignInUser(null))
         }
 
-        router.push('/your-health'); 
+        router.push('/your-health');
+       } catch (error) {
+        
+       } finally {
+        dispatch(setLoader(''));
+       }
     }
 
     return(
